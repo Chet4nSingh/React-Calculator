@@ -11,8 +11,15 @@ function App() {
         <div id="calculator" className="w-[48%] h-[90%] bg-slate-950">
           <div
             id="display-screen"
-            className="w-[90%] my-6 mx-auto h-[20%] bg-slate-200"
-          ></div>
+            className="w-[90%] my-6 mx-auto h-[20%] bg-slate-800"
+          >
+            <p id="display-prev" className="w-full h-2/5 text-4xl text-slate-400 p-2 pr-4 flex justify-end items-end">
+              234 *
+            </p>
+            <p id="display-curr" className="w-full h-3/5 text-6xl p-3 text-slate-200 flex justify-end items-end">
+              521
+            </p>
+          </div>
           <div
             id="buttons"
             className="w-[90%] h-[70%] flex flex-wrap justify-between gap-2 mx-auto"
