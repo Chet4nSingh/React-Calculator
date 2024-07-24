@@ -8,15 +8,15 @@ function App() {
         Calculator
       </h1>
       <main className="h-screen w-2/3 bg-slate-800 flex justify-center items-center">
-        <div id="calculator" className="w-[48%] h-[90%] bg-slate-950">
+        <div id="calculator" className="w-[48%] h-[90%] border bg-slate-950">
           <div
             id="display-screen"
-            className="w-[90%] my-6 mx-auto h-[20%] bg-slate-800"
+            className="w-[90%] my-6 mx-auto h-[20%] border bg-slate-800"
           >
-            <p id="display-prev" className="w-full h-2/5 text-4xl text-slate-400 p-2 pr-4 flex justify-end items-end">
+            <p id="display-prev" className="w-full h-2/5 text-4xl text-gray-400 p-2 pr-4 flex justify-end items-end">
               234 *
             </p>
-            <p id="display-curr" className="w-full h-3/5 text-6xl p-3 text-slate-200 flex justify-end items-end">
+            <p id="display-curr" className="w-full h-3/5 text-6xl p-3 text-white flex justify-end items-end">
               521
             </p>
           </div>
