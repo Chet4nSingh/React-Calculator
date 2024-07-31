@@ -1,8 +1,8 @@
 import { memo } from "react";
 
-const Button = memo(function Button({ type, children }) {
+const OperationButton = memo(function OperationButton({ operation }) {
   let customCSS = "w-[25%]";
-  if (children === "AC" || children === "=") {
+  if (operation === "AC" || operation === "=") {
     customCSS = "w-[50%]";
   }
 
@@ -13,9 +13,9 @@ const Button = memo(function Button({ type, children }) {
         " text-3xl font-bold bg-white flex justify-center items-center border-2 border-slate-950 hover:text-white hover:border-white hover:bg-slate-950"
       }
     >
-      {children}
+      {operation}
     </span>
   );
 });
 
-export default Button;
+export default OperationButton;

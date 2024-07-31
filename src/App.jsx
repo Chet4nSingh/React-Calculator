@@ -1,6 +1,24 @@
-import Button from "./components/Button";
+import { useReducer } from "react";
+import DigitButton from "./components/DigitButton";
+import OperationButton from "./components/OperationButton";
+
+function reducer(state, action) {
+  if (action.type === 'ADD_DIGIT') {
+    return {
+      ...state,
+      currentOperand: `${state.currentOperand}${action.payload}`,
+    }
+  }
+}
 
 function App() {
+
+  const [state, dispatch] = useReducer(reducer, {
+    currentOperand: "",
+    previousOperand: "",
+    operation: "",
+  });
+
   return (
     <>
       <h1 className="h-screen w-1/3 p-8 pt-40 bg-slate-950 text-white text-8xl">
@@ -17,37 +35,37 @@ function App() {
               id="display-prev"
               className="w-full h-2/5 text-4xl text-gray-600 p-2 pr-4 flex justify-end items-end"
             >
-              234 *
+              
             </p>
             <p
               id="display-curr"
               className="w-full h-3/5 text-6xl p-3 text-black flex justify-end items-end"
             >
-              521
+              {state.currentOperand}
             </p>
           </div>
           <div
             id="buttons"
             className="w-[90%] h-[70%] flex flex-wrap justify-center mx-auto"
           >
-            <Button>AC</Button>
-            <Button>DEL</Button>
-            <Button>/</Button>
-            <Button>1</Button>
-            <Button>2</Button>
-            <Button>3</Button>
-            <Button>*</Button>
-            <Button>4</Button>
-            <Button>5</Button>
-            <Button>6</Button>
-            <Button>+</Button>
-            <Button>7</Button>
-            <Button>8</Button>
-            <Button>9</Button>
-            <Button>-</Button>
-            <Button>.</Button>
-            <Button>0</Button>
-            <Button>=</Button>
+            <OperationButton operation={"AC"} />
+            <OperationButton operation={"DEL"} />
+            <OperationButton operation={"/"} />     
+            <DigitButton dispatch={dispatch} digit={1} />
+            <DigitButton dispatch={dispatch} digit={2} />
+            <DigitButton dispatch={dispatch} digit={3} />
+            <OperationButton operation={"*"} />    
+            <DigitButton dispatch={dispatch} digit={4} />
+            <DigitButton dispatch={dispatch} digit={5} />
+            <DigitButton dispatch={dispatch} digit={6} />  
+            <OperationButton operation={"+"} />    
+            <DigitButton dispatch={dispatch} digit={7} />
+            <DigitButton dispatch={dispatch} digit={8} />
+            <DigitButton dispatch={dispatch} digit={9} />  
+            <OperationButton operation={"-"} />    
+            <DigitButton dispatch={dispatch} digit={"."} />    
+            <DigitButton dispatch={dispatch} digit={0} />
+            <OperationButton operation={"="} />    
           </div>
         </div>
       </main>
