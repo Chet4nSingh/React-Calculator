@@ -13,7 +13,7 @@ function App() {
 
   return (
     <>
-      <h1 className="h-screen w-1/3 p-8 pt-40 bg-slate-950 text-white text-8xl">
+      <h1 className="h-screen w-1/3 text-4xl lg:text-6xl 2xl:text-8xl p-8 pt-40 bg-slate-950 text-white">
         React <br />
         Calculator
       </h1>
@@ -25,13 +25,13 @@ function App() {
           >
             <p
               id="display-prev"
-              className="w-full h-2/5 text-4xl text-gray-600 p-2 pr-4 flex justify-end items-end"
+              className="w-full h-2/5 text-4xl font-bold text-gray-600 p-2 pr-4 flex justify-end items-end"
             >
               {state.previousOperand} {state.operation}
             </p>
             <p
               id="display-curr"
-              className="w-full h-3/5 text-6xl p-3 text-black flex justify-end items-end"
+              className="w-full h-3/5 text-6xl p-3 font-bold text-black flex justify-end items-end"
             >
               {state.currentOperand}
             </p>
